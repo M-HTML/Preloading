@@ -29,8 +29,7 @@
                 loadedCount++;
 
                 if (loadedCount === imageUrls.length) {
-                    console.log('the images have been preloaded!');
-                    //remove the consolelog if you want
+                    console.warn('the images have been preloaded!');
                 }
             }
 
