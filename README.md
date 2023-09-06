@@ -17,7 +17,7 @@ This script works by collecting image URLs (also files) from various sources wit
 
 - **Pseudo-Elements:** It identifies and collects image URLs from pseudo-elements (::before and ::after) if they contain url references in their content properties.
 
-- **Mask Images:** The code also collects image URLs from elements with the mask-image attribute.
+- **Mask Images:** Collects image URLs from elements with the mask-image attribute.
 
 - **Callback:** It includes a callback function (imageLoaded) that gets executed when all images have finished preloading.
 
