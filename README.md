@@ -29,7 +29,7 @@ Place this **<​script​>** element before the closing **<​/body​>** tag o
 
 - **Logging:** It logs a message to the console when all images have been preloaded (Used for debugging).
 
-# ⚠ Flaws
+# ⚠️ Flaws
 **1.** Preloading caches an image instead of downloading to improve performance rather than redownloading an image each time.
 
 **2.** The browser could be using a cached version of an image until that version expires.
