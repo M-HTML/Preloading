@@ -30,6 +30,6 @@ This script works by collecting image URLs (as well as files) from various sourc
 
 **3.** The server the website is hosting the image on could have an exceeding cache duration.
 
-**4.** Only use this for higher priority images/sites with fewer images.
+**4.** Don't use this script for multiple lower priority images or sites with a very large multitude of images.
 
 **All of these factors can lead to the browser having an oudated image or slower page loading.**
