@@ -96,7 +96,7 @@ function preloadImages() {
             if (failedCount > 0) {
                 console.warn('Some images failed to preload:', failedImageUrls);
             } else if (imagesPreloaded) {
-                console.warn('All images have been preloaded successfully!');
+                console.warn('All ' + loadedCount + ' images have been preloaded successfully!');
             } else {
                 console.warn('No images were preloaded. Script might have been executed too late or no images were found.');
             }
