@@ -4,6 +4,12 @@ Preloads HTML and CSS based images for faster load times by caching them in the 
 # ❓ Explanation
 This script works by collecting image URLs (as well as files) from various sources within a web page and then storing those images before they are needed on a webpage. This ensures that they are cached in the browser for faster display when they are later used in the webpage's content.
 
+# 🕹 Usage
+Place this **<​script​>** element either in the **<​head​>** section or just before the closing **<​/body​>** tag of your HTML document.
+```html
+<script src="https://raw.githubusercontent.com/M-HTML/Preloading/main/Preload.js"></script>
+```
+
 # ✨ Features
 - **Image Source Collection:** Collects image URLs from various sources on a web page, including HTML elements, CSS styles, pseudo-elements, and elements with mask images.
 
@@ -33,3 +39,5 @@ This script works by collecting image URLs (as well as files) from various sourc
 **4.** Don't use this script for multiple lower priority images or sites with a very large multitude of images.
 
 **All of these factors can lead to the browser having an oudated image or slower page loading.**
+
+
