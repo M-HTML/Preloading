@@ -6,6 +6,14 @@ function preloadImages() {
         imageUrls.push(images[i].src);
     }
 
+    var objects = document.getElementsByTagName('object');
+    for (var i = 0; i < objects.length; i++) {
+        var data = objects[i].getAttribute('data');
+        if (data) {
+            imageUrls.push(data);
+        }
+    }
+
     var links = document.getElementsByTagName('a');
     for (var j = 0; j < links.length; j++) {
         var href = links[j].href;
@@ -21,34 +29,36 @@ function preloadImages() {
         for (var l = 0; l < rules.length; l++) {
             var rule = rules[l];
 
-            if (rule.style && rule.style.backgroundImage) {
-                var matches = rule.style.backgroundImage.match(/url\(['"]?([^'")]+)['"]?\)/);
-                if (matches && matches[1]) {
-                    imageUrls.push(matches[1]);
+            if (rule.style) {
+                if (rule.style.backgroundImage) {
+                    var matches = rule.style.backgroundImage.match(/url\(['"]?([^'")]+\.svg)['"]?\)/);
+                    if (matches && matches[1]) {
+                        imageUrls.push(matches[1]);
+                    }
                 }
-            }
 
-            if (rule.style && rule.style.listStyleImage) {
-                var listStyleImage = rule.style.listStyleImage;
-                var listStyleMatches = listStyleImage.match(/url\(['"]?([^'")]+)['"]?\)/);
-                if (listStyleMatches && listStyleMatches[1]) {
-                    imageUrls.push(listStyleMatches[1]);
+                if (rule.style.listStyleImage) {
+                    var listStyleImage = rule.style.listStyleImage;
+                    var listStyleMatches = listStyleImage.match(/url\(['"]?([^'")]+\.svg)['"]?\)/);
+                    if (listStyleMatches && listStyleMatches[1]) {
+                        imageUrls.push(listStyleMatches[1]);
+                    }
                 }
-            }
 
-            if (rule.style && rule.style.borderImageSource) {
-                var borderImageSource = rule.style.borderImageSource;
-                var borderImageMatches = borderImageSource.match(/url\(['"]?([^'")]+)['"]?\)/);
-                if (borderImageMatches && borderImageMatches[1]) {
-                    imageUrls.push(borderImageMatches[1]);
+                if (rule.style.borderImageSource) {
+                    var borderImageSource = rule.style.borderImageSource;
+                    var borderImageMatches = borderImageSource.match(/url\(['"]?([^'")]+\.svg)['"]?\)/);
+                    if (borderImageMatches && borderImageMatches[1]) {
+                        imageUrls.push(borderImageMatches[1]);
+                    }
                 }
-            }
 
-            if (rule.style && rule.style.cursor) {
-                var cursor = rule.style.cursor;
-                var cursorMatches = cursor.match(/url\(['"]?([^'")]+)['"]?\)/);
-                if (cursorMatches && cursorMatches[1]) {
-                    imageUrls.push(cursorMatches[1]);
+                if (rule.style.cursor) {
+                    var cursor = rule.style.cursor;
+                    var cursorMatches = cursor.match(/url\(['"]?([^'")]+\.svg)['"]?\)/);
+                    if (cursorMatches && cursorMatches[1]) {
+                        imageUrls.push(cursorMatches[1]);
+                    }
                 }
             }
         }
@@ -59,7 +69,7 @@ function preloadImages() {
         var pseudoElement = pseudoElements[m];
         var content = window.getComputedStyle(pseudoElement, '::before').content;
         if (content.indexOf('url') !== -1) {
-            var matches = content.match(/url\(['"]?([^'")]+)['"]?\)/);
+            var matches = content.match(/url\(['"]?([^'")]+\.svg)['"]?\)/);
             if (matches && matches[1]) {
                 imageUrls.push(matches[1]);
             }
