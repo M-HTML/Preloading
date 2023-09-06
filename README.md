@@ -9,9 +9,9 @@ This script works by collecting image URLs (also files) from various sources wit
 
 - **Supported Image Types:** It works for preloading various image types, such as SVGs, JPEGs, PNGs, GIFs, and other raster image types.
 
-- **HTML Elements:** Collects image URLs from **< img >** and **< object >** elements and includes SVGs referenced in these elements.
+- **HTML Elements:** Collects image URLs from **<​img​>** and **<​object​>** elements and includes SVGs referenced in these elements.
 
-- **Hyperlinks:** Includes image URLs from **< a >** (hyperlink) elements with non-empty href attributes.
+- **Hyperlinks:** Includes image URLs from **<​a​>** (hyperlink) elements with non-empty href attributes.
 
 - **CSS Styles:** The code checks for common CSS properties (e.g., background-image, list-style-image, border-image-source, cursor) and collects image URLs based on these styles for referenced HTML elements.
 
