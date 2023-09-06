@@ -1,5 +1,10 @@
 function preloadImages() {
     var imageUrls = [];
+    var failedImageUrls = [];
+    var preloadedImages = [];
+    var loadedCount = 0;
+    var failedCount = 0;
+    var imagesPreloaded = false;
 
     var images = document.getElementsByTagName('img');
     for (var i = 0; i < images.length; i++) {
@@ -84,21 +89,32 @@ function preloadImages() {
         }
     }
 
-    var preloadedImages = [];
-    var loadedCount = 0;
-
     function imageLoaded() {
         loadedCount++;
 
         if (loadedCount === imageUrls.length) {
-            console.warn('The images have been preloaded!');
+            if (failedCount > 0) {
+                console.warn('Some images failed to preload:', failedImageUrls);
+            } else if (imagesPreloaded) {
+                console.warn('All images have been preloaded successfully!');
+            } else {
+                console.warn('No images were preloaded. Script might have been executed too late or no images were found.');
+            }
         }
     }
 
     for (var p = 0; p < imageUrls.length; p++) {
         var img = new Image();
         img.src = imageUrls[p];
-        img.onload = imageLoaded;
+        img.onload = function () {
+            imagesPreloaded = true;
+            imageLoaded();
+        };
+        img.onerror = function () {
+            failedCount++;
+            failedImageUrls.push(this.src);
+            imageLoaded();
+        };
         preloadedImages.push(img);
     }
 }
