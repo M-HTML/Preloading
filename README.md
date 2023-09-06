@@ -28,7 +28,7 @@ This script works by collecting image URLs (also files) from various sources wit
 
 **2.** The browser could be using a cached version of an image until that version expires.
 
-**3.** The server the website is hosting could have an exceeding cache duration.
+**3.** The server the website is hosting the image on could have an exceeding cache duration.
 
 **4.** Only use this for higher priority images/sites with fewer images.
 
