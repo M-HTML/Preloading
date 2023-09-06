@@ -1,5 +1,5 @@
 # Preloading
-Preloads HTML and CSS based images for faster load times due to being cached in the browser. (Used on MHTML V4)
+Preloads HTML and CSS based images for faster load times by caching them in the browser. (Used on MHTML V4)
 
 # How does it work
 This script works by collecting image URLs (also files) from various sources within a web page and then preloading those images to ensure they are cached in the browser for faster display when they are later used in the webpage's content. 
