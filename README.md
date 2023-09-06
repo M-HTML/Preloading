@@ -7,7 +7,7 @@ This script works by collecting image URLs (as well as files) from various sourc
 # 🕹 Usage
 Place this **<​script​>** element either in the **<​head​>** section or just before the closing **<​/body​>** tag of your HTML document.
 ```html
-<script src="https://raw.githubusercontent.com/M-HTML/Preloading/main/Preload.js"></script>
+<script src="https://raw.githubusercontent.com/M-HTML/Preloading/main/Preload.min.js"></script>
 ```
 
 # ✨ Features
