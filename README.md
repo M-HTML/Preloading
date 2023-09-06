@@ -2,7 +2,7 @@
 Preloads HTML and CSS based images for faster load times by caching them in the browser. (Used on MHTML V4)
 
 # ❓ Explanation
-This script works by collecting image URLs (also files) from various sources within a web page and then preloading those images to ensure they are cached in the browser for faster display when they are later used in the webpage's content. 
+This script works by collecting image URLs (as well as files) from various sources within a web page and then storing those images before they are needed on a webpage. This ensures that they are cached in the browser for faster display when they are later used in the webpage's content.
 
 # ✨ Features
 - **Image Source Collection:** Collects image URLs from various sources on a web page, including HTML elements, CSS styles, pseudo-elements, and elements with mask images.
